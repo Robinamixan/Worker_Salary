@@ -1,6 +1,6 @@
 <?php
 
-namespace WorkersSalary;
+namespace WorkersSalary\Salary;
 
 class HoursSalary implements iSalary
 {

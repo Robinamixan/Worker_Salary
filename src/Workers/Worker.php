@@ -1,22 +1,19 @@
 <?php
 
-namespace WorkersSalary;
+namespace WorkersSalary\Workers;
 
-include "Salary/iSalary.php";
-include "Salary/FixedSalary.php";
-include "Salary/HoursSalary.php";
+use WorkersSalary\Salary\FixedSalary;
+use WorkersSalary\Salary\HoursSalary;
 
 class Worker
 {
     private $salary;
-    private $work_name;
     private $full_name;
 
-    function __construct(string $full_name, string $work_name, string $type, int $value, int $hours = 0)
+    function __construct(string $full_name, string $type_salary, int $value, int $hours = 0)
     {
         $this->full_name = $full_name;
-        $this->work_name = $work_name;
-        $this->set_salary($type, $value, $hours);
+        $this->set_salary($type_salary, $value, $hours);
     }
 
     private function set_salary(string $type, int $value, int $hours)
