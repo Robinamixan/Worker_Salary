@@ -11,8 +11,5 @@ namespace WorkersSalary\Workers;
 
 class SeniorDeveloper extends Worker
 {
-    function __construct($full_name, $type_salary, $value, $hours = 0)
-    {
-        parent::__construct($full_name, $type_salary, $value, $hours);
-    }
+
 }

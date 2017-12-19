@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace WorkersSalary;
 
+use WorkersSalary\Salary\FixedSalary;
+use WorkersSalary\Salary\HoursSalary;
 use WorkersSalary\Workers\Designer;
 use WorkersSalary\Workers\Markup;
 use WorkersSalary\Workers\MiddleDeveloper;
@@ -13,25 +15,25 @@ class Application
 {
     public function run()
     {
-        $design = new Designer('Georgiy', 'fixed', 3000);
+        $design = new Designer('Georgiy', new FixedSalary(3000));
 
-        $middle1 = new MiddleDeveloper('Alexcei', 'hours', 10, 60);
+        $middle1 = new MiddleDeveloper('Alexcei', new HoursSalary(10, 60));
 
-        $senior = new SeniorDeveloper('Sebostian', 'fixed', 1000);
+        $senior = new SeniorDeveloper('Sebostian', new FixedSalary(1000));
 
-        $middle2 = new MiddleDeveloper('Marik', 'fixed', 1000);
+        $middle2 = new MiddleDeveloper('Marik', new FixedSalary(1000));
 
-        $markup = new Markup('Nikolay', 'hours', 5, 120);
+        $markup = new Markup('Nikolay', new HoursSalary(5, 120));
 
-        $dream = new Command();
+        $team_of_dream = new Command();
 
-        $dream->add_worker($design);
-        $dream->add_worker($senior);
-        $dream->add_worker($middle1);
-        $dream->add_worker($middle2);
-        $dream->add_worker($markup);
+        $team_of_dream->addWorker($design);
+        $team_of_dream->addWorker($senior);
+        $team_of_dream->addWorker($middle1);
+        $team_of_dream->addWorker($middle2);
+        $team_of_dream->addWorker($markup);
 
-        echo $dream->get_all_salary();
+        echo $team_of_dream->getAllSalary();
     }
 }
 

@@ -11,7 +11,7 @@ class HoursSalary implements iSalary
         $this->value = $value*$hours;
     }
 
-    public function get_salary(): int
+    public function getSalary(): int
     {
         return $this->value;
     }

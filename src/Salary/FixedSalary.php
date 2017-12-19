@@ -11,7 +11,7 @@ class FixedSalary implements iSalary
         $this->value = $value;
     }
 
-    public function get_salary(): int
+    public function getSalary(): int
     {
         return $this->value;
     }

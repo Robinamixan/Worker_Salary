@@ -13,16 +13,16 @@ class Command
         $this->all_workers = [];
     }
 
-    public function add_worker(Worker $worker)
+    public function addWorker(Worker $worker)
     {
         array_push($this->all_workers, $worker);
     }
 
-    public function get_all_salary()
+    public function getAllSalary()
     {
         $sum = 0;
         foreach ($this->all_workers as $worker) {
-            $sum += $worker->get_salary();
+            $sum += $worker->getSalary();
         }
         return $sum;
     }
